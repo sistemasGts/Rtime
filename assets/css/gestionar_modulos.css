@@ -1,0 +1,132 @@
+/**
+ * Gestionar Módulos - Estilos
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+.module-tree {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.module-tree ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.module-node {
+    margin-bottom: 8px;
+}
+
+.module-node label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
+.module-url {
+    color: #6b7280;
+    font-size: 0.93rem;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.module-tree-container {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    background: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 500px;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .module-tree-container {
+        max-height: 400px;
+        padding: 12px;
+    }
+    
+    .module-tree ul {
+        padding-left: 16px;
+    }
+    
+    .module-node label {
+        gap: 8px;
+        font-size: 0.95rem;
+    }
+    
+    .module-url {
+        font-size: 0.85rem;
+    }
+}
+
+/* Formulario responsivo */
+form {
+    width: 100%;
+}
+
+.admin-selector-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.admin-selector-form label {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.admin-selector-form select {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    min-width: 260px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.action-buttons {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .admin-selector-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .admin-selector-form label {
+        width: 100%;
+        white-space: normal;
+    }
+    
+    .admin-selector-form select {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .action-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

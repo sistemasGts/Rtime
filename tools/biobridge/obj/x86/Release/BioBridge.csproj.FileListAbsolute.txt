@@ -1,0 +1,6 @@
+c:\xampp\htdocs\Rtime\tools\biobridge\obj\x86\Release\BioBridge.csproj.AssemblyReference.cache
+c:\xampp\htdocs\Rtime\tools\biobridge\obj\x86\Release\BioBridge.csproj.CoreCompileInputs.cache
+c:\xampp\htdocs\Rtime\tools\biobridge\bin\Release\BioBridge.exe
+c:\xampp\htdocs\Rtime\tools\biobridge\bin\Release\libzkfpcsharp.dll
+c:\xampp\htdocs\Rtime\tools\biobridge\obj\x86\Release\BioBridge.csproj.Up2Date
+c:\xampp\htdocs\Rtime\tools\biobridge\obj\x86\Release\BioBridge.exe

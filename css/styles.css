@@ -1,0 +1,737 @@
+/* Estilos globales compartidos para todo el sistema */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    min-height: 100vh;
+    color: #1f2937;
+    overflow-x: hidden;
+    font-size: 0.7rem;
+}
+
+/* Degradados de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(59, 130, 246, .12);
+    border-radius: 50%;
+    top: -180px;
+    left: -180px;
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: rgba(37, 99, 235, .10);
+    border-radius: 50%;
+    bottom: -180px;
+    right: -180px;
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* Contenedores principales */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card-box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 45px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .25);
+    animation: mostrar .6s ease;
+}
+
+.card-compact {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+/* Animación de entrada */
+@keyframes mostrar {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, .35);
+}
+
+/* Títulos */
+h1, h2 {
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+/* Subtítulos */
+.subtitle, .subtitulo {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 35px;
+    font-size: 14px;
+}
+
+/* Formularios */
+label {
+    display: block;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="text"], input[type="password"], input[type="search"], input[type="tel"], input[type="email"], input[type="url"], textarea, select {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    transition: .3s;
+    margin-bottom: 22px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+}
+
+input::placeholder, textarea::placeholder {
+    text-transform: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botones */
+button, .btn {
+    display: inline-block;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    box-shadow: 0 16px 40px rgba(37, 99, 235, .22);
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+
+.sync-box {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, .06);
+}
+
+.sync-box p {
+    margin: 0;
+    font-size: 0.96rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.sync-box .sync-details {
+    display: grid;
+    gap: 10px;
+}
+
+.progress-wrap {
+    display: none;
+    gap: 10px;
+}
+
+.progress-wrap.active {
+    display: grid;
+}
+
+.progress-label {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 12px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    transition: width .25s ease;
+}
+
+#syncStatus {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #475569;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, .35);
+}
+
+button:active, .btn:active {
+    transform: translateY(0);
+}
+
+button[type="submit"] {
+    width: 100%;
+}
+
+/* Variantes de botones */
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 12px 30px rgba(108, 117, 125, .35);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.btn-danger:hover {
+    box-shadow: 0 12px 30px rgba(220, 38, 38, .35);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.btn-success:hover {
+    box-shadow: 0 12px 30px rgba(22, 163, 74, .35);
+}
+
+.btn + .btn, button + button {
+    margin-left: 10px;
+}
+
+/* Mensajes y alertas */
+.error, .alert-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-left: 4px solid #dc2626;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.success, .alert-success {
+    background: #dcfce7;
+    color: #166534;
+    border-left: 4px solid #16a34a;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.info, .alert-info {
+    background: #dbeafe;
+    color: #1e40af;
+    border-left: 4px solid #3b82f6;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.warning, .alert-warning {
+    background: #fef3c7;
+    color: #92400e;
+    border-left: 4px solid #f59e0b;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+/* Navegación */
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-links, .nav-menu {
+    display: flex;
+    gap: 16px;
+    flex-wrap: nowrap; /* mantener horizontal los enlaces del header */
+    align-items: center;
+}
+
+.nav-links a, .nav-menu a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.nav-links a:hover, .nav-menu a:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* Dropdown dentro de la cabecera */
+.nav-links .dropdown { position: relative; display: inline-block; }
+.nav-links .dropdown > a { display: inline-block; padding: 8px 12px; color: #2563eb; text-decoration: none; }
+.nav-links .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #e6eef8; min-width: 180px; box-shadow: 0 8px 24px rgba(15,23,42,0.08); border-radius: 8px; z-index: 1000; }
+.nav-links .dropdown-menu a { display: block; padding: 8px 12px; color: #0f172a; text-decoration: none; }
+.nav-links .dropdown:hover .dropdown-menu { display: block; }
+
+/* Force visible menu when dropdown has .open class and ensure it receives pointer events */
+.nav-links .dropdown.open .dropdown-menu {
+    display: block !important;
+    pointer-events: auto;
+    z-index: 2000;
+}
+
+/* Submenu (anidado) */
+.nav-links .submenu { position: relative; }
+.nav-links .submenu > a { display: block; padding: 8px 12px; color: #2563eb; text-decoration: none; width: 100%; box-sizing: border-box; }
+.nav-links .submenu > a:hover { background: #dbeafe; color: #1d4ed8; }
+.nav-links .submenu-menu { display: none; position: absolute; top: 0; left: 100%; background: white; border: 1px solid #e6eef8; min-width: 200px; box-shadow: 0 8px 24px rgba(15,23,42,0.08); border-radius: 8px; z-index: 2100; }
+.nav-links .submenu-menu a { display: block; padding: 8px 12px; color: #0f172a; text-decoration: none; }
+.nav-links .submenu.open .submenu-menu { display: block !important; }
+
+/* Panel de administración */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.panel-info {
+    margin-top: 16px;
+    padding: 12px;
+    background: #eef6ff;
+    border: 1px solid #c7def8;
+    border-radius: 8px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+}
+
+tr:hover {
+    background: #f9fafb;
+}
+
+/* Búsqueda */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 0;
+}
+
+.search-box button {
+    margin-bottom: 0;
+    width: auto;
+}
+
+/* Grid y layouts */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.grid-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card-box {
+        width: 95%;
+        padding: 35px 25px;
+        margin: 0 auto;
+    }
+
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .nav-links, .nav-menu {
+        width: 100%;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .nav-links a,
+    .nav-links .dropdown > a,
+    .nav-links .submenu > a {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        padding: 10px 12px;
+    }
+
+    .nav-links .dropdown-menu,
+    .nav-links .submenu-menu {
+        position: static;
+        width: 100%;
+        min-width: auto;
+        box-shadow: none;
+        border: 1px solid #e6eef8;
+        border-radius: 8px;
+        background: white;
+        margin-top: 4px;
+    }
+
+    .nav-links .submenu-menu {
+        padding-left: 8px;
+    }
+
+    .nav-links .dropdown-menu a,
+    .nav-links .submenu-menu a {
+        padding: 8px 12px;
+    }
+
+    .nav-links .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .nav-links .dropdown.open .dropdown-menu {
+        display: block !important;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-box {
+        width: 95%;
+        padding: 25px 15px;
+    }
+
+    button, .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+
+    .btn + .btn {
+        margin-left: 5px;
+    }
+}
+
+/* Utilidades */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+
+.hidden {
+    display: none;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Fixes específicos para evitar overflow en formularios y tablas dentro de vistas */
+/* Permitir que los elementos del grid se reduzcan (previene overflow horizontal) */
+.form-grid {
+    max-width: 100%;
+}
+.form-grid > * {
+    min-width: 0;
+}
+
+/* Formularios compactos deben respetar el ancho del contenedor */
+.compact-form {
+    width: 100%;
+    box-sizing: border-box;
+}
+.compact-form input[type="text"],
+.compact-form select {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* La tabla de turnos: preferimos que las celdas hagan wrap en móvil en vez de forzar scroll horizontal */
+.turnos-table {
+    width: 100%;
+    max-width: 100%;
+    max-height: 60vh; /* limita la altura para permitir scroll vertical */
+    overflow: auto; /* scroll horizontal y vertical dentro del contenedor */
+    -webkit-overflow-scrolling: touch;
+}
+.turnos-table table {
+    width: max-content; /* ancho intrínseco según contenido para forzar scroll horizontal */
+    table-layout: auto;
+    border-collapse: collapse;
+}
+.turnos-table th, .turnos-table td {
+    white-space: nowrap; /* evitar wrap para mantener filas en una sola línea */
+    padding: 0.6rem 0.8rem;
+}
+
+@media (max-width: 940px) {
+    .turnos-table th, .turnos-table td { font-size: 13px; padding: 0.45rem 0.6rem; }
+}
+
+@media (max-width: 480px) {
+    /* reducir padding y fuente para mejor ajuste en pantallas pequeñas */
+    .card-box { padding: 18px 12px; }
+    h3 { font-size: 16px; }
+    .turnos-table th, .turnos-table td { font-size: 12px; padding: 8px; }
+}
+
+/* Ajustes específicos para pantallas muy pequeñas: evitar cualquier overflow horizontal
+   transformando la tabla para que ocupe 100% y permita wrap en celdas. */
+@media (max-width: 560px) {
+    .card-box { padding: 12px 8px; }
+    .compact-form input, .compact-form select, .compact-form textarea { font-size: 14px; }
+    .turnos-table { max-height: 55vh; }
+    .turnos-table table { width: 100% !important; min-width: 0 !important; table-layout: fixed !important; }
+    .turnos-table th, .turnos-table td {
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+    /* Asegurar que la columna de acciones no estire la tabla: */
+    .turnos-table td:last-child, .turnos-table th:last-child { width: 1%; white-space: nowrap; }
+}
+
+/* Botones dentro de la tabla: evitar que desborden y mantenerlos legibles */
+.turnos-table .actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: nowrap; /* por defecto, mantener en una línea y dejar que aparezca scroll horizontal para la fila si hace falta */
+}
+.turnos-table .actions .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    min-width: 44px;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* En móviles, apilar botones y permitir que ocupen todo el ancho de la celda */
+@media (max-width: 560px) {
+    .turnos-table .actions { flex-direction: column; align-items: stretch; }
+    .turnos-table .actions .btn { width: 100%; max-width: none; }
+}
+
+/* Hacer botones de la tabla blancos para resaltar iconos/emoji, excepto botones de peligro */
+.turnos-table .actions .btn:not(.btn-danger) {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
+}
+.turnos-table .actions .btn i,
+.turnos-table .actions .btn svg {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Asegurar que el botón de desactivar mantenga el estilo de peligro pero no crezca demasiado */
+.turnos-table .actions .btn.btn-danger {
+    padding: 6px 10px;
+    min-width: 44px;
+}
