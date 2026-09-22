@@ -24,6 +24,24 @@ $user = "root";
 $password = "";
 $database = "rt_local";
 
+if (!defined('RTIME_APP_TIMEZONE')) {
+    define('RTIME_APP_TIMEZONE', 'America/Lima');
+}
+
+if (date_default_timezone_get() !== RTIME_APP_TIMEZONE) {
+    date_default_timezone_set(RTIME_APP_TIMEZONE);
+}
+
+if (!function_exists('configureConnectionTimezone')) {
+    function configureConnectionTimezone($con2) {
+        if (!($con2 instanceof mysqli)) {
+            return;
+        }
+
+        @$con2->query("SET time_zone = '-05:00'");
+    }
+}
+
 
 // Verifica si la función ya está declarada antes de definirla
 if (!function_exists('createConnection')) {
@@ -42,6 +60,7 @@ if (!function_exists('createConnection')) {
 
         $con2->options(MYSQLI_OPT_CONNECT_TIMEOUT, 10);
         $con2->set_charset('utf8mb4');
+        configureConnectionTimezone($con2);
 
         return $con2;
     }

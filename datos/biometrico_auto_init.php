@@ -159,21 +159,42 @@ try {
  */
 function iniciar_cron_windows() {
     try {
-        // Verificar si el proceso ya está corriendo
-        $output = shell_exec('tasklist /FI "IMAGENAME eq php.exe" 2>NUL');
-        
-        // Método 1: Intentar ejecutar directamente (background, sin bloquear)
-        $php_path = 'C:\\xampp\\php\\php.exe';
+        $php_path = 'C:\\xampp\\php\\php-win.exe';
+        if (!file_exists($php_path)) {
+            $php_path = 'C:\\xampp\\php\\php.exe';
+        }
+
         $script_path = dirname(__DIR__) . '\\proceso\\biometrico_health_check_cron.php';
-        
-        if (file_exists($php_path) && file_exists($script_path)) {
-            // Usar START /B para ejecutar en background
-            $cmd = "START \"\" /B \"$php_path\" \"$script_path\" >nul 2>&1";
-            pclose(popen($cmd, 'r'));
+        $task_name = 'Rtime-BiometricoHealthCheck';
+        $lock_file = dirname(__DIR__) . '/logs/biometrico_health_check_worker.lock';
+        $cooldown_seconds = 240;
+
+        if (!file_exists($php_path) || !file_exists($script_path)) {
+            return false;
+        }
+
+        $last_launch = @file_exists($lock_file) ? @filemtime($lock_file) : false;
+        if ($last_launch && (time() - $last_launch) < $cooldown_seconds) {
             return true;
         }
-        
-        return false;
+
+        // Crear la tarea solo si no existe; evita duplicados y ventanas visibles.
+        $query = 'schtasks /Query /TN "' . $task_name . '" 2>NUL';
+        $existing = @shell_exec($query);
+        $task_exists = is_string($existing) && stripos($existing, 'ERROR:') === false && stripos($existing, 'No tasks are scheduled') === false && trim($existing) !== '';
+
+        if (!$task_exists) {
+            $task_cmd = '"' . $php_path . '" "' . $script_path . '"';
+            $create_cmd = 'schtasks /Create /TN "' . $task_name . '" /TR "' . $task_cmd . '" /SC MINUTE /MO 5 /RU SYSTEM /RL HIGHEST /F';
+            @shell_exec($create_cmd);
+        }
+
+        @file_put_contents($lock_file, date('c'));
+
+        // Ejecutar inmediato si no hay tarea activa, pero sin abrir consola.
+        $run_cmd = 'schtasks /Run /TN "' . $task_name . '" 2>NUL';
+        @shell_exec($run_cmd);
+        return true;
     } catch (Exception $e) {
         return false;
     }

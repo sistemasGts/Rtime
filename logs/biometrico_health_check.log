@@ -1,0 +1,387 @@
+[2026-09-22 14:23:59] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:23:59] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:23:59] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 23ms)
+[2026-09-22 14:23:59] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:23:59] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:23:59] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 13ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:23:59] [RESUMEN] Total verificados: 1
+[2026-09-22 14:23:59] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:23:59] 
+[2026-09-22 14:23:59] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:23:59] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:23:59] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 23ms)
+[2026-09-22 14:23:59] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:23:59] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:23:59] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 16ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:23:59] [RESUMEN] Total verificados: 1
+[2026-09-22 14:23:59] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:23:59] 
+[2026-09-22 14:28:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:28:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:28:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 2ms)
+[2026-09-22 14:28:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:28:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:28:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 2ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:28:01] [RESUMEN] Total verificados: 1
+[2026-09-22 14:28:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:28:01] 
+[2026-09-22 14:28:12] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:28:12] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:28:12] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 14:28:12] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:28:12] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:28:12] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 20ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:28:12] [RESUMEN] Total verificados: 1
+[2026-09-22 14:28:12] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:28:12] 
+[2026-09-22 14:31:42] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:31:42] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:31:42] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 25ms)
+[2026-09-22 14:31:42] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:31:42] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:31:42] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:31:42] [RESUMEN] Total verificados: 1
+[2026-09-22 14:31:42] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:31:42] 
+[2026-09-22 14:32:07] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:32:08] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:32:08] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 3ms)
+[2026-09-22 14:32:08] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:32:08] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:32:08] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 14ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:32:08] [RESUMEN] Total verificados: 1
+[2026-09-22 14:32:08] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:32:08] 
+[2026-09-22 14:32:45] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:32:45] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:32:45] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 14:32:45] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:32:45] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:32:45] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:32:45] [RESUMEN] Total verificados: 1
+[2026-09-22 14:32:45] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:32:45] 
+[2026-09-22 14:37:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:37:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:37:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 24ms)
+[2026-09-22 14:37:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:37:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:37:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 4ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:37:02] [RESUMEN] Total verificados: 1
+[2026-09-22 14:37:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:37:02] 
+[2026-09-22 14:38:54] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:38:54] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:38:54] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 14:38:54] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:38:54] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:38:54] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 20ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:38:54] [RESUMEN] Total verificados: 1
+[2026-09-22 14:38:54] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:38:54] 
+[2026-09-22 14:42:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:42:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:42:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 18ms)
+[2026-09-22 14:42:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:42:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:42:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 24ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:42:02] [RESUMEN] Total verificados: 1
+[2026-09-22 14:42:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:42:02] 
+[2026-09-22 14:43:47] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:43:47] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:43:47] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 14:43:47] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:43:47] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:43:47] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 18ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:43:47] [RESUMEN] Total verificados: 1
+[2026-09-22 14:43:47] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:43:47] 
+[2026-09-22 14:47:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:47:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:47:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 14:47:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:47:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:47:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 15ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:47:02] [RESUMEN] Total verificados: 1
+[2026-09-22 14:47:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:47:02] 
+[2026-09-22 14:47:51] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:47:51] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:47:51] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 14:47:51] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:47:51] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:47:51] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:47:51] [RESUMEN] Total verificados: 1
+[2026-09-22 14:47:51] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:47:51] 
+[2026-09-22 14:52:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:52:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:52:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 14:52:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:52:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:52:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:52:01] [RESUMEN] Total verificados: 1
+[2026-09-22 14:52:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:52:01] 
+[2026-09-22 14:57:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 14:57:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 14:57:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 19ms)
+[2026-09-22 14:57:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 14:57:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 14:57:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 15ms (Timeout en http://localhost:5101/health)
+[2026-09-22 14:57:02] [RESUMEN] Total verificados: 1
+[2026-09-22 14:57:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 14:57:02] 
+[2026-09-22 15:02:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 15:02:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 15:02:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 22ms)
+[2026-09-22 15:02:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 15:02:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 15:02:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 15ms (Timeout en http://localhost:5101/health)
+[2026-09-22 15:02:02] [RESUMEN] Total verificados: 1
+[2026-09-22 15:02:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 15:02:02] 
+[2026-09-22 15:07:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 15:07:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 15:07:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 11ms)
+[2026-09-22 15:07:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 15:07:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 15:07:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 14ms (Timeout en http://localhost:5101/health)
+[2026-09-22 15:07:02] [RESUMEN] Total verificados: 1
+[2026-09-22 15:07:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 15:07:02] 
+[2026-09-22 15:12:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 15:12:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 15:12:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 11ms)
+[2026-09-22 15:12:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 15:12:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 15:12:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 14ms (Timeout en http://localhost:5101/health)
+[2026-09-22 15:12:02] [RESUMEN] Total verificados: 1
+[2026-09-22 15:12:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 15:12:02] 
+[2026-09-22 15:17:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 15:17:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 15:17:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 23ms)
+[2026-09-22 15:17:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 15:17:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 15:17:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 15ms (Timeout en http://localhost:5101/health)
+[2026-09-22 15:17:02] [RESUMEN] Total verificados: 1
+[2026-09-22 15:17:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 15:17:02] 
+[2026-09-22 15:21:11] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 15:21:11] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 15:21:11] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 17ms)
+[2026-09-22 15:21:11] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 15:21:11] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 15:21:11] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 15:21:11] [RESUMEN] Total verificados: 1
+[2026-09-22 15:21:11] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 15:21:11] 
+[2026-09-22 15:22:02] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 15:22:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 15:22:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 2ms)
+[2026-09-22 15:22:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 15:22:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 15:22:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 13ms (Timeout en http://localhost:5101/health)
+[2026-09-22 15:22:02] [RESUMEN] Total verificados: 1
+[2026-09-22 15:22:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 15:22:02] 
+[2026-09-22 15:27:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 15:27:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 15:27:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 2ms)
+[2026-09-22 15:27:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 15:27:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 15:27:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 15:27:02] [RESUMEN] Total verificados: 1
+[2026-09-22 15:27:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 15:27:02] 
+[2026-09-22 15:32:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 08:32:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 08:32:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 08:32:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 08:32:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 08:32:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 16ms (Timeout en http://localhost:5101/health)
+[2026-09-22 08:32:02] [RESUMEN] Total verificados: 1
+[2026-09-22 08:32:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 08:32:02] 
+[2026-09-22 15:37:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 08:37:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 08:37:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 11ms)
+[2026-09-22 08:37:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 08:37:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 08:37:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 15ms (Timeout en http://localhost:5101/health)
+[2026-09-22 08:37:02] [RESUMEN] Total verificados: 1
+[2026-09-22 08:37:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 08:37:02] 
+[2026-09-22 15:42:02] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 08:42:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 08:42:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 19ms)
+[2026-09-22 08:42:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 08:42:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 08:42:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 22ms (Timeout en http://localhost:5101/health)
+[2026-09-22 08:42:02] [RESUMEN] Total verificados: 1
+[2026-09-22 08:42:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 08:42:02] 
+[2026-09-22 15:47:02] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 08:47:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 08:47:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 11ms)
+[2026-09-22 08:47:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 08:47:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 08:47:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 15ms (Timeout en http://localhost:5101/health)
+[2026-09-22 08:47:02] [RESUMEN] Total verificados: 1
+[2026-09-22 08:47:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 08:47:02] 
+[2026-09-22 15:52:02] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 08:52:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 08:52:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 27ms)
+[2026-09-22 08:52:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 08:52:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 08:52:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 27ms (Timeout en http://localhost:5101/health)
+[2026-09-22 08:52:02] [RESUMEN] Total verificados: 1
+[2026-09-22 08:52:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 08:52:02] 
+[2026-09-22 15:57:02] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 08:57:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 08:57:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 23ms)
+[2026-09-22 08:57:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 08:57:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 08:57:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 08:57:02] [RESUMEN] Total verificados: 1
+[2026-09-22 08:57:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 08:57:02] 
+[2026-09-22 16:02:02] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:02:02] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:02:02] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 27ms)
+[2026-09-22 09:02:02] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:02:02] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:02:02] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 2ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:02:02] [RESUMEN] Total verificados: 1
+[2026-09-22 09:02:02] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:02:02] 
+[2026-09-22 16:07:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:07:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:07:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 09:07:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:07:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:07:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:07:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:07:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:07:01] 
+[2026-09-22 16:12:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:12:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:12:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 2ms)
+[2026-09-22 09:12:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:12:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:12:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:12:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:12:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:12:01] 
+[2026-09-22 16:17:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:17:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:17:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 12ms)
+[2026-09-22 09:17:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:17:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:17:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 27ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:17:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:17:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:17:01] 
+[2026-09-22 16:22:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:22:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:22:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 4ms)
+[2026-09-22 09:22:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:22:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:22:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 25ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:22:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:22:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:22:01] 
+[2026-09-22 16:27:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:27:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:27:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 09:27:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:27:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:27:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:27:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:27:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:27:01] 
+[2026-09-22 16:32:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:32:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:32:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 2ms)
+[2026-09-22 09:32:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:32:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:32:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 2ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:32:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:32:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:32:01] 
+[2026-09-22 16:37:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:37:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:37:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 09:37:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:37:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:37:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 29ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:37:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:37:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:37:01] 
+[2026-09-22 16:42:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:42:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:42:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 18ms)
+[2026-09-22 09:42:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:42:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:42:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 29ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:42:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:42:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:42:01] 
+[2026-09-22 16:47:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:47:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:47:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 20ms)
+[2026-09-22 09:47:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:47:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:47:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 14ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:47:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:47:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:47:01] 
+[2026-09-22 16:52:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:52:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:52:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 09:52:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:52:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:52:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 22ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:52:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:52:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:52:01] 
+[2026-09-22 16:57:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 09:57:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 09:57:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-22 09:57:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 09:57:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 09:57:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 1ms (Timeout en http://localhost:5101/health)
+[2026-09-22 09:57:01] [RESUMEN] Total verificados: 1
+[2026-09-22 09:57:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 09:57:01] 
+[2026-09-22 17:02:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 10:02:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 10:02:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 11ms)
+[2026-09-22 10:02:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 10:02:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 10:02:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 16ms (Timeout en http://localhost:5101/health)
+[2026-09-22 10:02:01] [RESUMEN] Total verificados: 1
+[2026-09-22 10:02:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 10:02:01] 
+[2026-09-22 17:07:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 10:07:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 10:07:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 21ms)
+[2026-09-22 10:07:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 10:07:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 10:07:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 14ms (Timeout en http://localhost:5101/health)
+[2026-09-22 10:07:01] [RESUMEN] Total verificados: 1
+[2026-09-22 10:07:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 10:07:01] 
+[2026-09-22 17:12:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-22 10:12:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-22 10:12:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 23ms)
+[2026-09-22 10:12:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-22 10:12:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-22 10:12:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 16ms (Timeout en http://localhost:5101/health)
+[2026-09-22 10:12:01] [RESUMEN] Total verificados: 1
+[2026-09-22 10:12:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-22 10:12:01] 

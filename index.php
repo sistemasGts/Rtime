@@ -67,6 +67,10 @@ try {
             background: #fef2f2;
             border-color: #dc2626;
         }
+        .fingerprint-reader.warning {
+            background: #fffbeb;
+            border-color: #f59e0b;
+        }
         @keyframes pulse {
             0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, .5); }
             50% { box-shadow: 0 0 0 12px rgba(245, 158, 11, 0); }
@@ -81,6 +85,7 @@ try {
         .status-text.capturing { color: #d97706; }
         .status-text.success { color: #15803d; }
         .status-text.error { color: #b91c1c; }
+        .status-text.warning { color: #b45309; }
         .result-box {
             margin-top: 20px;
             padding: 18px;
@@ -91,6 +96,7 @@ try {
         }
         .result-box.success { border-color: #86efac; background: #ecfdf5; }
         .result-box.error { border-color: #fecaca; background: #fef2f2; }
+        .result-box.warning { border-color: #fcd34d; background: #fffbeb; }
     </style>
 </head>
 <body>
@@ -98,7 +104,7 @@ try {
 
 <!-- Sonidos personalizados: coloque archivos en assets/sounds/success.mp3 y assets/sounds/error.mp3 -->
 <audio id="sound-success" src="tools/sounds/success.mp3" preload="auto"></audio>
-<!-- <audio id="sound-error" src="tools/sounds/error.mp3" preload="auto"></audio> -->
+<audio id="sound-error" src="tools/sounds/error.mp3" preload="auto"></audio>
 
 <!-- ========== STATUS HEALTH CHECK BIOMÉTRICO ========== -->
 <?php if (!$biobridge_activo): ?>
@@ -250,6 +256,8 @@ function playSound(success) {
     try {
         const audioEl = document.getElementById(success ? 'sound-success' : 'sound-error');
         if (audioEl && audioEl.src) {
+            audioEl.currentTime = 0;
+            audioEl.muted = false;
             const p = audioEl.play();
             if (p && typeof p.then === 'function') {
                 p.catch(err => {
@@ -295,6 +303,66 @@ function playToneFallback(success) {
     }
 }
 
+function classifyFailureMessage(message) {
+    const msg = String(message || '').toLowerCase();
+
+    const waitingPatterns = [
+        'timeout waiting for finger',
+        'waiting for finger',
+        'tiempo de espera',
+        'esperando huella',
+        'esperando dedo'
+    ];
+
+    const noMatchPatterns = [
+        'no se reconoció la huella',
+        'no coincide con los registros',
+        'no encontrada',
+        'huella equivocada',
+        'no match'
+    ];
+
+    const bridgeInitPatterns = [
+        'bridge: init failed',
+        'bridge init failed',
+        'init failed'
+    ];
+
+    if (waitingPatterns.some(pattern => msg.includes(pattern))) {
+        return {
+            level: 'warning',
+            statusText: '⏳ Esperando huella... coloca el dedo nuevamente',
+            resultText: 'Sin lectura válida en este intento. Vuelve a colocar el dedo.',
+            playErrorSound: false
+        };
+    }
+
+    if (noMatchPatterns.some(pattern => msg.includes(pattern))) {
+        return {
+            level: 'warning',
+            statusText: '⚠️ Huella no reconocida, intenta nuevamente',
+            resultText: 'La huella no coincide con un registro válido.',
+            playErrorSound: true
+        };
+    }
+
+    if (bridgeInitPatterns.some(pattern => msg.includes(pattern))) {
+        return {
+            level: 'error',
+            statusText: '✗ Error al iniciar el lector biométrico',
+            resultText: 'No se pudo inicializar el lector biométrico. Verifica el servicio BioBridge y vuelve a intentar.',
+            playErrorSound: false
+        };
+    }
+
+    return {
+        level: 'error',
+        statusText: '✗ ' + (message || 'Error en la verificación biométrica'),
+        resultText: message || 'No se pudo registrar la asistencia.',
+        playErrorSound: true
+    };
+}
+
 async function capturarHuellaLoop() {
     isCapturing = true;
     const reader = document.getElementById('reader');
@@ -302,7 +370,7 @@ async function capturarHuellaLoop() {
     const resultado = document.getElementById('resultado');
     const resultadoMsg = document.getElementById('resultadoMensaje');
 
-    reader.classList.remove('success', 'error');
+    reader.classList.remove('success', 'error', 'warning');
     reader.classList.add('capturing');
     status.classList.remove('success', 'error');
     status.classList.add('capturing');
@@ -345,20 +413,24 @@ async function capturarHuellaLoop() {
 
             await new Promise(r => setTimeout(r, 4000));
         } else {
-            playSound(false);
-            reader.classList.add('error');
+            const failure = classifyFailureMessage(data.mensaje || '');
+            if (failure.playErrorSound) {
+                playSound(false);
+            }
+            reader.classList.add(failure.level);
             status.classList.remove('capturing');
-            status.classList.add('error');
-            status.textContent = '✗ ' + (data.mensaje || 'No se reconoció la huella');
+            status.classList.add(failure.level);
+            status.textContent = failure.statusText;
 
-            resultado.className = 'result-box error';
-            resultadoMsg.textContent = data.mensaje || 'No se pudo registrar la asistencia.';
+            resultado.className = 'result-box ' + failure.level;
+            resultadoMsg.textContent = failure.resultText;
             resultado.style.display = 'block';
 
             await new Promise(r => setTimeout(r, 800));
         }
     } catch (error) {
         console.error(error);
+        // Error real de conexión/servidor: mantener sonido de error
         playSound(false);
         reader.classList.remove('capturing');
         reader.classList.add('error');
@@ -378,7 +450,7 @@ async function capturarHuellaLoop() {
 function statusUpdate(text, styleClass) {
     const status = document.getElementById('status');
     status.textContent = text;
-    status.classList.remove('capturing','success','error');
+    status.classList.remove('capturing','success','error','warning');
     if (styleClass) status.classList.add(styleClass);
 }
 

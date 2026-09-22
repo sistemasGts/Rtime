@@ -514,6 +514,121 @@ if (!function_exists('syncWorkerHttpPostInternal')) {
     }
 }
 
+if (!function_exists('syncCollectLocalCatalogForPush')) {
+    function syncCollectLocalCatalogForPush($con2, $limit = 200) {
+        if (!is_object($con2) || !($con2 instanceof mysqli)) {
+            return ['trabajadores' => [], 'huellas' => []];
+        }
+
+        $trabajadores = [];
+        $stmt = @$con2->prepare('SELECT per_iId, per_vcDocumento, per_vcPaterno, per_vcMaterno, per_vcNombre, per_vcNombres FROM trabajador ORDER BY per_iId LIMIT ?');
+        if ($stmt) {
+            $limitInt = max(0, (int)$limit);
+            @$stmt->bind_param('i', $limitInt);
+            @$stmt->execute();
+            $res = @$stmt->get_result();
+            while ($res && ($row = $res->fetch_assoc())) {
+                $trabajadores[] = [
+                    'per_iId' => (int)($row['per_iId'] ?? 0),
+                    'per_vcDocumento' => (string)($row['per_vcDocumento'] ?? ''),
+                    'per_vcPaterno' => (string)($row['per_vcPaterno'] ?? ''),
+                    'per_vcMaterno' => (string)($row['per_vcMaterno'] ?? ''),
+                    'per_vcNombre' => (string)($row['per_vcNombre'] ?? ''),
+                    'per_vcNombres' => (string)($row['per_vcNombres'] ?? ''),
+                ];
+            }
+            @$stmt->close();
+        }
+
+        $huellas = [];
+        $stmt2 = @$con2->prepare('SELECT per_iId, dedo, template_binario, imagen_b64, fecha_captura FROM huella_biometrica ORDER BY fecha_captura DESC LIMIT ?');
+        if ($stmt2) {
+            $limitInt = max(0, (int)$limit);
+            @$stmt2->bind_param('i', $limitInt);
+            @$stmt2->execute();
+            $res2 = @$stmt2->get_result();
+            while ($res2 && ($row = $res2->fetch_assoc())) {
+                if (empty($row['template_binario'])) {
+                    continue;
+                }
+                $huellas[] = [
+                    'per_iId' => (int)($row['per_iId'] ?? 0),
+                    'dedo' => (string)($row['dedo'] ?? ''),
+                    'template_binario' => (string)$row['template_binario'],
+                    'imagen_b64' => isset($row['imagen_b64']) ? (string)$row['imagen_b64'] : '',
+                    'fecha_captura' => (string)($row['fecha_captura'] ?? date('Y-m-d H:i:s')),
+                ];
+            }
+            @$stmt2->close();
+        }
+
+        return ['trabajadores' => $trabajadores, 'huellas' => $huellas];
+    }
+}
+
+if (!function_exists('syncPushCatalogToWebIfConfigured')) {
+    function syncPushCatalogToWebIfConfigured(array $cfg, $con2 = null) {
+        $base = rtrim((string)($cfg['cloud_base_url'] ?? ''), '/');
+        $sede = trim((string)($cfg['sede_codigo'] ?? ''));
+        $key = trim((string)($cfg['api_key'] ?? ''));
+
+        if ($base === '' || $sede === '' || $key === '') {
+            return ['ok' => false, 'mensaje' => 'Falta cloud_base_url/sede_codigo/api_key para push catalogo'];
+        }
+
+        if (!is_object($con2) || !($con2 instanceof mysqli)) {
+            if (isset($GLOBALS['con2']) && $GLOBALS['con2'] instanceof mysqli) {
+                $con2 = $GLOBALS['con2'];
+            }
+        }
+
+        if (!is_object($con2) || !($con2 instanceof mysqli)) {
+            return ['ok' => false, 'mensaje' => 'No hay conexión local para leer catálogo'];
+        }
+
+        $catalogo = syncCollectLocalCatalogForPush($con2, (int)($cfg['batch_limit'] ?? 200));
+        $payload = [
+            'sede_codigo' => $sede,
+            'trabajadores' => $catalogo['trabajadores'],
+            'huellas' => $catalogo['huellas'],
+        ];
+
+        $ctx = stream_context_create([
+            'http' => [
+                'method' => 'POST',
+                'timeout' => 30,
+                'header' => "Content-Type: application/json\r\n" .
+                    "X-API-KEY: $key\r\n" .
+                    "X-SEDE-CODIGO: $sede\r\n",
+                'content' => json_encode($payload, JSON_UNESCAPED_UNICODE),
+                'ignore_errors' => true,
+            ],
+        ]);
+
+        $resp = @file_get_contents($base . '/api/sync/push_catalogo.php', false, $ctx);
+        if ($resp === false) {
+            return ['ok' => false, 'mensaje' => 'No se pudo conectar a cloud para enviar catálogo'];
+        }
+
+        $data = @json_decode($resp, true);
+        if (!is_array($data)) {
+            return ['ok' => false, 'mensaje' => 'Respuesta inválida de cloud al enviar catálogo'];
+        }
+
+        if (!($data['ok'] ?? false)) {
+            return ['ok' => false, 'mensaje' => $data['mensaje'] ?? 'Cloud rechazó catálogo', 'respuesta' => $data];
+        }
+
+        return [
+            'ok' => true,
+            'mensaje' => $data['mensaje'] ?? 'Catálogo enviado',
+            'total_trabajadores' => (int)($data['total_trabajadores'] ?? 0),
+            'total_huellas' => (int)($data['total_huellas'] ?? 0),
+            'respuesta' => $data,
+        ];
+    }
+}
+
 if (!function_exists('syncRunWorkerInline')) {
     function syncRunWorkerInline($cfg = null) {
         $SYNC_LOCAL_CONFIG = is_array($cfg) ? $cfg : syncResolveConfigForWorker();
@@ -582,6 +697,9 @@ if (!function_exists('syncRunWorkerInline')) {
             ];
         }
 
+        $catalogoPush = syncPushCatalogToWebIfConfigured($SYNC_LOCAL_CONFIG, $GLOBALS['con2'] ?? null);
+        $result['steps']['push_catalogo'] = $catalogoPush;
+
         $push = sincronizarAsistenciasOfflineCloud($base, $sede, $key, $limit);
         $result['steps']['push_asistencias'] = $push;
 
@@ -620,38 +738,17 @@ if (!function_exists('syncExecuteWorkerOnce')) {
             return ['ok' => false, 'mensaje' => 'No se encontró sync_worker.php'];
         }
 
-        $cmd = '"' . $phpBin . '" "' . $worker . '" 2>&1';
-        $out = [];
-        $code = 1;
-        @exec($cmd, $out, $code);
-        $raw = trim(implode("\n", $out));
-        $json = @json_decode($raw, true);
+        $cmd = escapeshellarg($phpBin) . ' ' . escapeshellarg($worker);
+        $output = [];
+        $code = 0;
+        @exec($cmd . ' 2>&1', $output, $code);
 
-        if ($code === 0 && is_array($json)) {
-            return [
-                'ok' => (bool)($json['ok'] ?? true),
-                'mensaje' => $json['mensaje'] ?? 'Worker ejecutado',
-                'detalle' => $json,
-                'raw' => $raw,
-            ];
-        }
-
-        $inline = syncRunWorkerInline($cfg);
-        if (($inline['ok'] ?? false)) {
-            return [
-                'ok' => true,
-                'mensaje' => 'Worker ejecutado en modo inline (fallback)',
-                'detalle' => $inline,
-                'raw' => json_encode($inline, JSON_UNESCAPED_UNICODE),
-                'fallback' => 'inline',
-            ];
-        }
-
+        $raw = implode("\n", $output);
         return [
-            'ok' => false,
-            'mensaje' => 'No se pudo ejecutar sync_worker automáticamente',
+            'ok' => $code === 0,
+            'mensaje' => $code === 0 ? 'Worker ejecutado' : 'Worker falló',
+            'code' => $code,
             'raw' => $raw,
-            'exit_code' => $code,
         ];
     }
 }

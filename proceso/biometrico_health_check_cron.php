@@ -7,7 +7,7 @@
  * - Si está UP: verifica todos los dispositivos cada 5 minutos
  * - Mantiene registro de cuándo se conectó/desconectó el puente
  * 
- * Uso: */5 * * * * /usr/bin/php C:\xampp\htdocs\Rtime\proceso\biometrico_health_check_cron.php
+ * Uso: ejecutar cada 5 minutos con php C:\xampp\htdocs\Rtime\proceso\biometrico_health_check_cron.php
  */
 
 if (php_sapi_name() !== 'cli') {
