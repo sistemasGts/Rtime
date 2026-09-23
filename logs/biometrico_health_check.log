@@ -1771,3 +1771,12 @@
 [2026-09-23 08:47:01] [RESUMEN] Total verificados: 1
 [2026-09-23 08:47:01] [FIN] ═════════════════════════════════════════════════════
 [2026-09-23 08:47:01] 
+[2026-09-23 15:55:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-23 08:55:09] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-23 08:55:17] [PUENTE-DOWN] ✗ BioBridge INACTIVO/DESCONECTADO
+[2026-09-23 08:55:17] [PUENTE-DETALLE] Razón: Puente no disponible en http://localhost:5101/ (timeout o desconectado)
+[2026-09-23 08:55:17] [SKIP] Verificación de dispositivos CANCELADA (esperar a que puente se active)
+[2026-09-23 08:55:17] [FIN] ═════════════════════════════════════════════════════
+[2026-09-23 08:55:17] 
+[2026-09-23 16:00:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-23 09:00:09] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
