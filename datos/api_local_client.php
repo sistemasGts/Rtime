@@ -42,14 +42,20 @@ if (!function_exists('rtimeLocalApiRequest')) {
             ],
         ]);
 
-        $resp = @file_get_contents($baseUrl, false, $ctx);
-        if ($resp === false) {
-            return ['ok' => false, 'mensaje' => 'No se pudo conectar con API de Rt_web'];
-        }
+        $urls = rtimeLocalApiCandidateUrls($baseUrl);
+        $lastError = 'No se pudo conectar con API de Rt_web';
+        foreach ($urls as $url) {
+            $resp = @file_get_contents($url, false, $ctx);
+            if ($resp === false) {
+                continue;
+            }
 
-        $decoded = rtimeDecodeApiResponseJson($resp);
-        $json = $decoded['json'] ?? null;
-        if (!is_array($json)) {
+            $decoded = rtimeDecodeApiResponseJson($resp);
+            $json = $decoded['json'] ?? null;
+            if (is_array($json)) {
+                return $json;
+            }
+
             $statusLine = '';
             if (isset($http_response_header) && is_array($http_response_header) && !empty($http_response_header[0])) {
                 $statusLine = trim((string)$http_response_header[0]);
@@ -63,10 +69,45 @@ if (!function_exists('rtimeLocalApiRequest')) {
                 $msg .= ': ' . $preview;
             }
 
+            $is404 = (stripos($statusLine, '404') !== false);
+            if ($is404) {
+                $lastError = $msg;
+                continue;
+            }
+
             return ['ok' => false, 'mensaje' => $msg];
         }
 
-        return $json;
+        return ['ok' => false, 'mensaje' => $lastError];
+    }
+}
+
+if (!function_exists('rtimeLocalApiCandidateUrls')) {
+    function rtimeLocalApiCandidateUrls(string $baseUrl): array {
+        $candidates = [];
+        $baseUrl = trim($baseUrl);
+        if ($baseUrl !== '') {
+            $candidates[] = $baseUrl;
+        }
+
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+        $scheme = $isHttps ? 'https' : 'http';
+
+        $candidates[] = $scheme . '://' . $host . '/Rt_web/api/local/trabajadores.php';
+        $candidates[] = $scheme . '://' . $host . '/rt_web/api/local/trabajadores.php';
+        $candidates[] = $scheme . '://' . $host . '/api/local/trabajadores.php';
+
+        $unique = [];
+        foreach ($candidates as $url) {
+            $u = rtrim((string)$url, '/');
+            if ($u === '') {
+                continue;
+            }
+            $unique[$u] = true;
+        }
+
+        return array_keys($unique);
     }
 }
 
