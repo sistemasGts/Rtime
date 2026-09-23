@@ -1771,3 +1771,12 @@
 [2026-09-23 08:47:01] [RESUMEN] Total verificados: 1
 [2026-09-23 08:47:01] [FIN] ═════════════════════════════════════════════════════
 [2026-09-23 08:47:01] 
+[2026-09-23 15:52:01] [INICIO] ═════════════════════════════════════════════════════
+[2026-09-23 08:52:01] [CHECK-PUENTE] Verificando disponibilidad del BioBridge...
+[2026-09-23 08:52:01] [PUENTE-OK] ✓ BioBridge ACTIVO (latencia: 1ms)
+[2026-09-23 08:52:01] [CHECK-DISPOSITIVOS] BioBridge activo. Verificando dispositivos...
+[2026-09-23 08:52:01] [DISPOSITIVOS-OK] ✓ Verificación completada
+[2026-09-23 08:52:01] [DISPOSITIVO] [desconectado] BioBridge Principal:5101 → 14ms (Timeout en http://localhost:5101/health)
+[2026-09-23 08:52:01] [RESUMEN] Total verificados: 1
+[2026-09-23 08:52:01] [FIN] ═════════════════════════════════════════════════════
+[2026-09-23 08:52:01] 
