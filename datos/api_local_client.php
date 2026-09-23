@@ -35,6 +35,7 @@ if (!function_exists('rtimeLocalApiRequest')) {
                 'method' => 'POST',
                 'timeout' => $timeout > 0 ? $timeout : 15,
                 'header' => "Content-Type: application/json\r\n" .
+                            "Accept: application/json\r\n" .
                             "X-LOCAL-API-KEY: " . $apiKey . "\r\n",
                 'content' => json_encode($body, JSON_UNESCAPED_UNICODE),
                 'ignore_errors' => true,
@@ -46,12 +47,66 @@ if (!function_exists('rtimeLocalApiRequest')) {
             return ['ok' => false, 'mensaje' => 'No se pudo conectar con API de Rt_web'];
         }
 
-        $json = @json_decode($resp, true);
+        $decoded = rtimeDecodeApiResponseJson($resp);
+        $json = $decoded['json'] ?? null;
         if (!is_array($json)) {
-            return ['ok' => false, 'mensaje' => 'Respuesta inválida de API Rt_web'];
+            $statusLine = '';
+            if (isset($http_response_header) && is_array($http_response_header) && !empty($http_response_header[0])) {
+                $statusLine = trim((string)$http_response_header[0]);
+            }
+            $preview = trim((string)($decoded['preview'] ?? ''));
+            $msg = 'Respuesta inválida de API Rt_web';
+            if ($statusLine !== '') {
+                $msg .= ' (' . $statusLine . ')';
+            }
+            if ($preview !== '') {
+                $msg .= ': ' . $preview;
+            }
+
+            return ['ok' => false, 'mensaje' => $msg];
         }
 
         return $json;
+    }
+}
+
+if (!function_exists('rtimeDecodeApiResponseJson')) {
+    function rtimeDecodeApiResponseJson(string $resp): array {
+        $raw = ltrim($resp, "\xEF\xBB\xBF \t\r\n");
+        $json = @json_decode($raw, true);
+        if (is_array($json)) {
+            return ['json' => $json, 'preview' => ''];
+        }
+
+        $startObj = strpos($raw, '{');
+        $endObj = strrpos($raw, '}');
+        if ($startObj !== false && $endObj !== false && $endObj > $startObj) {
+            $fragment = substr($raw, $startObj, ($endObj - $startObj + 1));
+            $json = @json_decode($fragment, true);
+            if (is_array($json)) {
+                return ['json' => $json, 'preview' => ''];
+            }
+        }
+
+        $startArr = strpos($raw, '[');
+        $endArr = strrpos($raw, ']');
+        if ($startArr !== false && $endArr !== false && $endArr > $startArr) {
+            $fragment = substr($raw, $startArr, ($endArr - $startArr + 1));
+            $json = @json_decode($fragment, true);
+            if (is_array($json)) {
+                return ['json' => $json, 'preview' => ''];
+            }
+        }
+
+        $preview = trim(preg_replace('/\s+/', ' ', strip_tags($raw)));
+        if ($preview === '') {
+            $preview = 'sin cuerpo de respuesta';
+        }
+        if (strlen($preview) > 180) {
+            $preview = substr($preview, 0, 180) . '...';
+        }
+
+        return ['json' => null, 'preview' => $preview];
     }
 }
 
